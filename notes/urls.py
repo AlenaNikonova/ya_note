@@ -1,3 +1,5 @@
+"""Строка документации блока."""
+
 from django.urls import path
 
 from notes import views

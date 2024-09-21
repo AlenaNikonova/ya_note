@@ -1,3 +1,5 @@
+"""Строка документации блока."""
+
 from pytils.translit import slugify
 
 from django import forms
@@ -12,6 +14,7 @@ class NoteForm(forms.ModelForm):
     """Форма для создания или обновления заметки."""
 
     class Meta:
+        """Класс Мета."""
         model = Note
         fields = ('title', 'text', 'slug')
 

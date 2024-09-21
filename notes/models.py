@@ -1,3 +1,5 @@
+"""Строка документации блока"""
+
 from django.conf import settings
 from django.db import models
 
@@ -5,6 +7,7 @@ from pytils.translit import slugify
 
 
 class Note(models.Model):
+    """Модель заметки."""
     title = models.CharField(
         'Заголовок',
         max_length=100,
