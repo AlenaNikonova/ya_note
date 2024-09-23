@@ -32,10 +32,10 @@ class TestNoteCreate(BaseTestCase):
             self.auth_client.post(URL_ADD_NOTE, data=FORM_DATA),
             URL_SUCCESS_PAGE)
         self.assertEqual(Note.objects.count(), notes_count_before + 1)
-        self.assertEqual(Note.objects.last().title, TITLE)
-        self.assertEqual(Note.objects.last().text, TEXT)
-        self.assertEqual(Note.objects.last().slug, SLUG)
-        self.assertEqual(Note.objects.last().author, self.user)
+        self.assertEqual(Note.objects.get().title, TITLE)
+        self.assertEqual(Note.objects.get().text, TEXT)
+        self.assertEqual(Note.objects.get().slug, SLUG)
+        self.assertEqual(Note.objects.get().author, self.user)
         
     def test_empty_slug(self):
         """Автоматическое формирование slug, если его не задал пользователь."""
